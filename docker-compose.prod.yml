@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  db_prod:
+    image: postgres
+    volumes:
+      - ./db/prod_data/data:/var/lib/postgresql/data
+    env_file:
+      - prod.env
+  web_prod:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
+      args:
+        - REDIS_HOST=redis_prod
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db_prod
+      - redis_prod
+    env_file:
+      - prod.env
+  redis_prod:
+    image: redis:7

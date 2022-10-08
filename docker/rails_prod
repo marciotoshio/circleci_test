@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+RAILS_ENV="${RAILS_ENV:-production}"
+docker compose -f docker-compose.prod.yml run --rm -e RAILS_ENV=$RAILS_ENV web_prod bundle exec rails $@
+

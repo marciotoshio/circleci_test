@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+RAILS_ENV="${RAILS_ENV:-development}"
+docker compose run --rm web yarn $@
