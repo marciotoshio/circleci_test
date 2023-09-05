@@ -1,27 +1,24 @@
-# Dockerized rails app template
+# README
 
-## Quick spin up
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Execute the setup script:
-```
-./setup.sh
-```
+Things you may want to cover:
 
-The rails app will be created using the following options:
-```
---database postgresql --css tailwind --skip-test --force
-```
-If you want different options you can change in the setup.sh script.
+* Ruby version
 
-## Usage
+* System dependencies
 
-In the docker folder you can find shortcut scripts to execute most used commands like rails, bundle,
-rspec, for example you can run database migration with:
-```
-./docker/rails db:migrate
-```
+* Configuration
 
-To gracefully shutdown all services use:
-```
-./docker/down
-```
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
