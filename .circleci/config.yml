@@ -9,7 +9,7 @@ jobs:
   test:
     docker:
       - image: cimg/ruby:3.0.6-node
-      - image: cimg/postgres:12.12
+      - image: cimg/postgres:12.15
     environment:
       DATABASE_URL: postgres://postgres@localhost/circle_test
       RAILS_ENV: test
